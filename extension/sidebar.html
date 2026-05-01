@@ -1,0 +1,41 @@
+<div class="sidebar">
+  <div class="sb-header">
+    <div class="sb-title">Student Buddy</div>
+    <button class="sb-close" title="Close">x</button>
+  </div>
+
+  <div class="sb-content">
+    <button class="sb-btn" id="sb-load-problem">Load problem</button>
+    <div id="sb-problem-status">Not loaded</div>
+  </div>
+  <div class="sb-content">
+    <label class="sb-label">Have you attempted the problem?</label>
+    <textarea
+      class="sb-textarea"
+      placeholder="Optional: If you have tried, enter your approach here..."
+    ></textarea>
+  </div>
+  <div class="sb-content sb-row">
+    <button class="sb-btn" id="sb-get-hint">Get Hint</button>
+    <button class="sb-btn" id="sb-next-hint">Next Hint</button>
+  </div>
+  <div class="sb-content">
+    <label class="sb-label">Select Language: </label>
+    <select class="sb-select">
+      <option value="cpp">C++</option>
+      <option value="java">Java</option>
+      <option value="python">Python</option>
+      <option value="javascript">JavaScript</option>
+    </select>
+  </div>
+  <div class="sb-content">
+    <button class="sb-btn" id="sb-solution">Show Full Solution</button>
+  </div>
+  <div class="sb-content">
+    <label class="sb-label">Output</label>
+  </div>
+
+  <div class="sb-output" id="sb-output">
+    Load the problem, then ask for hints.
+  </div>
+</div>
