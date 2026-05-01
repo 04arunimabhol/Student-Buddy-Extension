@@ -1,34 +1,39 @@
 # Student-Buddy
 
-Student Buddy is a browser extension that helps students solve coding problems by providing structured hints instead of direct solutions.
+A Chrome Extension that helps you solve DSA problems on LeetCode with progressive AI-generated hints instead of directly showing the solution.
 
 ## Key Features
 
 🔹 Smart Hint System
-- Provides progressive hints instead of full solutions
-- Encourages independent thinking
-- Helps users reach the solution themselves
+- 3-level hint system (gradual guidance)
+    - Level 1 → subtle clue
+    - Level 2 → approach guidance
+    - Level 3 → near-solution hint
+- Encourages thinking instead of spoon-feeding answers
 
-🔹 Problem Extraction
-- Automatically extracts problem title and description
-- Works directly within coding platforms
-- No need for manual input
+🔹 Pattern Detection
+- Identifies problem-solving patterns (e.g., Hash Map, Two Pointers)
 
-🔹 Backend-Powered Hint Generation
-- Uses API-based architecture to generate hints dynamically
-- Clean separation between frontend and backend
+🔹 Seamless Integration
+- Automatically extracts problem details (title,description,difficulty)
+- Works directly on LeetCode problem pages (more coding platforms in future)
+- No manual input required
 
-🔹 Interactive Sidebar UI
-- Simple and distraction-free interface
-- Displays hints in a structured and readable format
-- Scrollable output for better usability
+🔹 Optional Full Solution
+- View complete solution only when needed
 
-🔹 Error Handling & Fallbacks
-- Handles API failures gracefully
-- Displays user-friendly error messages
+🔹 User Input Support
+- Add your approach/code to get more relevant hints
 
 ## Tech Stack
-- Frontend: JavaScript, HTML, CSS (Chrome Extension)
-- Backend: Node.js, Express, LLM-based hint generation
+🔹 Frontend (Extension):
+- JavaScript (Vanilla)
+- HTML + CSS (Custom UI)
+- Chrome Extension (Manifest V3)
+
+🔹 Backend:
+- Node.js + Express
+- LLM-based hint generation 
+    - Gemini API (Google Generative AI)
 
 
