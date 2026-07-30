@@ -1,39 +1,94 @@
-# Student-Buddy
+# Student Buddy
 
-A Chrome Extension that helps you solve DSA problems on LeetCode with progressive AI-generated hints instead of directly showing the solution.
+Student Buddy is a Chrome Extension that helps users solve LeetCode problems through progressive AI-powered hints instead of immediately revealing the solution. It promotes active learning by guiding users toward the correct approach while allowing them to request the full solution only when necessary.
 
-## Key Features
+---
 
-🔹 Smart Hint System
-- 3-level hint system (gradual guidance)
-    - Level 1 → subtle clue
-    - Level 2 → approach guidance
-    - Level 3 → near-solution hint
-- Encourages thinking instead of spoon-feeding answers
+## ✨ Features
 
-🔹 Pattern Detection
-- Identifies problem-solving patterns (e.g., Hash Map, Two Pointers)
+### 🧠 Progressive AI Hint System
+- Three levels of progressively detailed hints:
+  - Level 1 – Subtle clue
+  - Level 2 – Approach guidance
+  - Level 3 – Near-solution explanation
+- Encourages problem-solving rather than directly revealing the answer.
 
-🔹 Seamless Integration
-- Automatically extracts problem details (title,description,difficulty)
-- Works directly on LeetCode problem pages (more coding platforms in future)
-- No manual input required
+### 🎯 Pattern Detection
+- Identifies the underlying algorithm or data structure used in the problem.
+- Examples:
+  - Hash Map
+  - Two Pointers
+  - Sliding Window
+  - Dynamic Programming
+  - Graph Traversal
+  - And more.
 
-🔹 Optional Full Solution
-- View complete solution only when needed
+### 📄 Automatic Problem Extraction
+- Automatically extracts:
+  - Problem title
+  - Description
+  - Difficulty
+- Works directly on LeetCode with no manual copy-pasting.
 
-🔹 User Input Support
-- Add your approach/code to get more relevant hints
+### 💡 Context-Aware Hint Generation
+- Users can optionally enter their current approach or partial code.
+- AI generates hints tailored to the user's progress.
 
-## Tech Stack
-🔹 Frontend (Extension):
-- JavaScript (Vanilla)
-- HTML + CSS (Custom UI)
-- Chrome Extension (Manifest V3)
+### 📝 Multi-Language Solution Generation
+Generate complete solutions in:
+- Java
+- C++
+- Python
+- JavaScript
 
-🔹 Backend:
-- Node.js + Express
-- LLM-based hint generation 
-    - Gemini API (Google Generative AI)
+### 🔓 Free Trial + Bring Your Own API Key
+- Includes free AI usage for the first **2 unique problems**.
+- After the free trial, users can securely add their own Gemini API key.
+- API keys are stored locally in the browser (`chrome.storage.local`) and never shared with LeetCode.
 
+### ⚙️ Built-in Settings
+- Update Gemini API key directly from the extension.
+- No need to edit files or reinstall the extension.
 
+### 🖥️ Expandable Output Panel
+- View hints and solutions in a larger popup for better readability.
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend (Chrome Extension)
+- JavaScript (ES6)
+- HTML5
+- CSS3
+- Chrome Extension Manifest V3
+
+### Backend
+- Node.js
+- Express.js
+- Google Gemini API (`@google/genai`)
+- Express Rate Limiter
+- CORS
+
+### Storage
+- Chrome Storage API (`chrome.storage.local`)
+
+---
+
+## 🚀 How It Works
+
+1. Open any LeetCode problem.
+2. Click **Load Problem**.
+3. Enter your approach (optional).
+4. Request AI-generated hints progressively.
+5. Reveal the complete solution only if needed.
+6. After the free trial, add your own Gemini API key from the Settings panel.
+
+## 🚀 Live Backend
+
+**Backend API:** https://student-buddy-extension-rust.vercel.app
+
+## Screenshots
+### Chrome Extension Interface
+
+![Student Buddy Extension](./screenshots/Student_Buddy_Extension.png)
