@@ -11,7 +11,10 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         headers["Authorization"] = `Bearer ${apiKey}`;
     }
 
-    fetch(`http://127.0.0.1:3000/${endpoint}`, {
+    const LOCAL_URL = "http://127.0.0.1:3000";
+    const PROD_URL = "https://student-buddy-extension-rust.vercel.app";
+
+    fetch(`${PROD_URL}/${endpoint}`, {
         method: "POST",
         headers,
         body: JSON.stringify(body),
