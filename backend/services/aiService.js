@@ -5,10 +5,12 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-
-export const generateHints = async ({ title, description, difficulty, userCode }) => {
+export const generateHints = async ({ title, description, difficulty, userCode }, apiKey) => {
   try {
+    const ai = new GoogleGenAI({
+      apiKey
+    });
+
     const prompt = buildHintPrompt({ title, description, difficulty, userCode });
 
     const result = await ai.models.generateContent({
@@ -40,6 +42,10 @@ export const generateHints = async ({ title, description, difficulty, userCode }
   } catch (err) {
     console.error("Hint Error:", err);
 
+    if (err.status === 400 || err.status === 401 || err.status === 403) {
+        throw new Error("INVALID_API_KEY");
+    }
+
     return {
       pattern: "Fallback",
       level1: "Understand the constraints.",
@@ -49,8 +55,12 @@ export const generateHints = async ({ title, description, difficulty, userCode }
   }
 };
 
-export const generateSolution = async ({ title, description, difficulty, userCode, language }) => {
+export const generateSolution = async ({ title, description, difficulty, userCode, language }, apiKey) => {
   try {
+    const ai = new GoogleGenAI({
+      apiKey
+    });
+
     const prompt = buildSolutionPrompt({
       title,
       description,
@@ -68,6 +78,9 @@ export const generateSolution = async ({ title, description, difficulty, userCod
 
   } catch (err) {
     console.error("Solution Error:", err);
+    if (err.status === 400 || err.status === 401 || err.status === 403) {
+      throw new Error("INVALID_API_KEY");
+    }
     throw new Error("AI failed to generate solution");
   }
 };

@@ -21,7 +21,10 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": ["sidebar.html"],
+      "resources": [
+        "sidebar.html",
+        "settings.html"
+      ],
       "matches": ["https://leetcode.com/*"]
     }
   ]

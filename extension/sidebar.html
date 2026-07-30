@@ -1,7 +1,11 @@
 <div class="sidebar">
   <div class="sb-header">
     <div class="sb-title">Student Buddy</div>
-    <button class="sb-close" title="Close">x</button>
+
+    <div class="sb-header-actions">
+      <button id="sb-settings" class="sb-icon-btn" title="Settings">⚙️</button>
+      <button class="sb-close" title="Close">✕</button>
+    </div>
   </div>
 
   <div class="sb-content">
@@ -31,11 +35,47 @@
   <div class="sb-content">
     <button class="sb-btn" id="sb-solution">Show Full Solution</button>
   </div>
-  <div class="sb-content">
-    <label class="sb-label">Output</label>
+  <div class="sb-content sb-output-header">
+      <label class="sb-label">Output</label>
+      <button id="sb-expand-output" class="sb-expand-btn" title="Expand Output">⛶</button>
   </div>
 
   <div class="sb-output" id="sb-output">
     Load the problem, then ask for hints.
+  </div>
+
+  <!-- Output Modal -->
+  <div id="sb-output-modal" class="sb-modal">
+    <div class="sb-modal-content">
+      <div class="sb-modal-header">
+        <span>Output</span>
+        <button id="sb-close-modal">✕</button>
+      </div>
+      <div id="sb-modal-output" class="sb-modal-output"></div>
+    </div>
+  </div>
+
+  <div id="sb-settings-panel" class="sb-settings-panel" style="display:none;">
+    <div class="sb-settings-header">
+      <span>Settings</span>
+      <button id="sb-settings-close">✕</button>
+    </div>
+
+    <label class="sb-label">Gemini API Key</label>
+
+    <input
+        id="sb-api-key"
+        class="sb-input"
+        type="password"
+        placeholder="Paste your Gemini API Key"
+    >
+
+    <button id="sb-save-key" class="sb-btn">
+        Save
+    </button>
+
+    <div id="sb-save-status"></div>
+    <p class="sb-small">Note - Your Gemini API key is stored locally on your device and is only sent to Student Buddy's backend to generate hints and solutions. It is never shared with LeetCode.</p>
+
   </div>
 </div>
