@@ -14,7 +14,7 @@ export const generateHints = async ({ title, description, difficulty, userCode }
     const prompt = buildHintPrompt({ title, description, difficulty, userCode });
 
     const result = await ai.models.generateContent({
-      model: "gemini-2.5-flash-lite",
+      model: "gemini-3.5-flash-lite",
       contents: prompt
     });
 
@@ -70,7 +70,7 @@ export const generateSolution = async ({ title, description, difficulty, userCod
     });
 
     const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash-lite",
+      model: "gemini-3.5-flash-lite",
       contents: prompt
     });
 
